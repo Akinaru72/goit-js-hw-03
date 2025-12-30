@@ -1,114 +1,169 @@
-# goit-js-hw-03
+# Homework №3
 
-Домашнє завдання №3
+## Instructions
 
-Створи репозиторій goit-js-hw-03 та склонюй його собі на комп’ютер.
-У папці goit-js-hw-03 створи структуру проєкта, як показано на схемі нижче.
+- Create a repository **goit-js-hw-03** and clone it to your computer.
+- In the `goit-js-hw-03` folder, create the project structure as shown in the task.
 
-Зверни увагу! Імена файлів та папок, а також їх структура вкладеності, мають відповідати вказаній схемі. В іншому разі робота не буде прийнята.
+⚠️ **Pay attention!**  
+File and folder names, as well as the nesting structure, must **exactly match** the specified scheme. Otherwise, the work will not be accepted.
 
-Прочитай кожне завдання і виконай його у відповідному файлі.
-Переконайся, що код відформатований за допомогою Prettier, а в консолі відсутні помилки і попередження під час відкриття живої сторінки завдання.
-Здай домашнє завдання на перевірку
+![Project preview](assets/homework-js-3.jpg)
 
-Формат здачі: Домашня робота містить два посилання: на вихідні файли та робочу сторінку на GitHub Pages.
+- Read each task carefully and complete it in the corresponding file.
+- Make sure the code is formatted using **Prettier**.
+- When opening the live page, there should be no errors or warnings in the console.
+- Submit the homework for review.
 
-Задача 1. Генератор slug
+---
 
-Виконуй це завдання у файлі task-1.js
+## Submission Format
 
-Перш, ніж розв’язувати задачу, давай визначимося із новим терміном!
+The homework must contain **two links**:
 
-Термін slug — це зрозумілий людині унікальний ідентифікатор, який використовується у веб розробці для створення читабельних URL-адрес.
+- a link to the source files (repository with the code);
+- a link to the live page on **GitHub Pages**.
 
-Наприклад, замість того, щоб користувач побачив в адресному рядку mysite.com/posts/1q8fh74tx, можна зробити slug із назви статті. У результаті адреса буде приємнішою для сприйняття: mysite.com/posts/arrays-for-beginners.
+---
 
-Slug — це завжди рядок у нижньому регістрі, слова якого розділені тире.
+## Task 1. Slug Generator
 
-З цим розібралися? А тепер давай нарешті виконувати задачу!
+**File:** `task-1.js`
 
-Напиши функцію slugify(title), яка приймає заголовок статті, параметр title і повертає slug, створений із цього рядка.
+Before solving the task, let’s get familiar with a new term.
 
-Значенням параметра title будуть рядки, слова яких розділені лише пробілами.
-Усі символи slug повинні бути в нижньому регістрі.
-Усі слова slug повинні бути розділені тире.
-Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
+**Slug** is a human-readable unique identifier used in web development to create readable URL addresses.
 
-console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
-console.log(slugify("English for developer")); // "english-for-developer"
-console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
+Have we figured this out? Now let’s finally get to the task!
 
-Залиш цей код для перевірки ментором.
+### Task
 
-На що буде звертати увагу ментор при перевірці:
+Write a function `slugify(title)` that takes an article title (the `title` parameter) and returns a **slug** created from this string.
 
-Оголошена функція slugify(title)
-Виклик slugify("Arrays for beginners") повертає "arrays-for-beginners"
-Виклик slugify("English for developer") повертає "english-for-developer"
-Виклик slugify("Ten secrets of JavaScript") повертає "ten-secrets-of-javascript"
-Виклик slugify("How to become a JUNIOR developer in TWO WEEKS") повертає "how-to-become-a-junior-developer-in-two-weeks"
+#### Requirements:
 
-Задача 2. Композиція масивів
+- the value of the `title` parameter is a string in which words are separated **only by spaces**;
+- all characters in the slug must be in **lowercase**;
+- all words in the slug must be separated by **hyphens** (`-`).
 
-Виконуй це завдання у файлі task-2.js
+### Code for Testing
 
-Напиши функцію під назвою makeArray, яка приймає три параметри: firstArray (масив), secondArray (масив) і maxLength (число). Функція повинна створювати новий масив, який містить усі елементи з firstArray, а потім усі елементи з secondArray.
+Take the code below and paste it after declaring your function to verify that it works correctly.  
+The results of the function execution will be logged to the console.
 
-Якщо кількість елементів у новому масиві перевищує maxLength, функція повинна повернути копію масиву з довжиною maxLength елементів.
-В іншому випадку функція повинна повернути весь новий масив.
+```js
+console.log(slugify("Arrays for beginners"));
+// "arrays-for-beginners"
 
-Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
+console.log(slugify("English for developer"));
+// "english-for-developer"
 
-console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
-console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
-console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
+console.log(slugify("Ten secrets of JavaScript"));
+// "ten-secrets-of-javascript"
 
-Залиш цей код для перевірки ментором.
+console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
+// "how-to-become-a-junior-developer-in-two-weeks"
+```
 
-На що буде звертати увагу ментор при перевірці:
+Leave this code for the mentor to review.
 
-Оголошена функція makeArray(firstArray, secondArray, maxLength)
-Виклик makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) повертає ["Mango", "Poly", "Ajax"]
-Виклик makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4) повертає ["Mango", "Poly", "Houston", "Ajax"]
-Виклик makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) повертає ["Mango", "Ajax", "Chelsea"]
-Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) повертає ["Earth", "Jupiter"]
-Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) повертає ["Earth", "Jupiter", "Neptune", "Uranus"]
-Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) повертає []
-Виклик функції makeArray() з випадковими масивами і випадковим числом повертає правильний масив
+### What the mentor will pay attention to during the review:
 
-Задача 3. Фільтрація масиву чисел
+- The `slugify(title)` function is declared
+- Calling `slugify("Arrays for beginners")` returns `"arrays-for-beginners"`
+- Calling `slugify("English for developer")` returns `"english-for-developer"`
+- Calling `slugify("Ten secrets of JavaScript")` returns `"ten-secrets-of-javascript"`
+- Calling `slugify("How to become a JUNIOR developer in TWO WEEKS")` returns `"how-to-become-a-junior-developer-in-two-weeks"`
 
-Виконуй це завдання у файлі task-3.js
+---
 
-Напиши функцію filterArray(numbers, value), яка приймає масив чисел (numbers) та значення (value) як параметри. Функція повинна повертати новий масив лише тих чисел із масиву numbers, які більші за значення value.
+## Task 2. Array Composition
 
-Усередині функції:
+Complete this task in the `task-2.js` file.
 
-Створи порожній масив, у який будеш додавати підходящі числа.
-Використай цикл для ітерації кожного елемента масиву numbers.
-Використовуй умовний оператор if усередині циклу для перевірки кожного елемента и додавання до свого масиву.
-Поверни свій новий масив з підходящими числами як результат.
+Write a function called `makeArray` that takes three parameters:  
+`firstArray` (an array), `secondArray` (an array), and `maxLength` (a number).
 
-Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
+The function should create a new array that contains all elements from `firstArray`, followed by all elements from `secondArray`.
 
+If the number of elements in the new array exceeds `maxLength`, the function should return a copy of the array limited to `maxLength` elements.  
+Otherwise, the function should return the entire new array.
+
+Take the code below and paste it after declaring your function to check that it works correctly.  
+The results of the function execution will be logged to the console.
+
+```js
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+// ["Mango", "Poly", "Ajax"]
+
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
+// ["Mango", "Poly", "Houston", "Ajax"]
+
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3));
+// ["Mango", "Ajax", "Chelsea"]
+
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2));
+// ["Earth", "Jupiter"]
+
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4));
+// ["Earth", "Jupiter", "Neptune", "Uranus"]
+
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
+// []
+```
+
+Keep this code for mentor review.
+
+### What the mentor will pay attention to:
+
+- The function `makeArray(firstArray, secondArray, maxLength)` is declared
+- The call `makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)` returns `["Mango", "Poly", "Ajax"]`
+- The call `makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)` returns `["Mango", "Poly", "Houston", "Ajax"]`
+- The call `makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)` returns `["Mango", "Ajax", "Chelsea"]`
+- The call `makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)` returns `["Earth", "Jupiter"]`
+- The call `makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)` returns `["Earth", "Jupiter", "Neptune", "Uranus"]`
+- The call `makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)` returns `[]`
+- The call to `makeArray()` with random arrays and a random number returns the correct array
+
+---
+
+## Task 3. Filtering an array of numbers
+
+Complete this task in the `task-3.js` file.
+
+Write a function `filterArray(numbers, value)` that takes an array of numbers (`numbers`) and a value (`value`) as parameters.  
+The function should return a new array containing only those numbers from the `numbers` array that are greater than `value`.
+
+### Inside the function:
+
+- Create an empty array to store the matching numbers.
+- Use a loop to iterate over each element in the `numbers` array.
+- Use an `if` statement inside the loop to check each element and add it to your array if it meets the condition.
+- Return the new array containing the matching numbers.
+
+### Test code
+
+Use the code below after declaring your function to check if it works correctly.  
+The results will be logged to the console.
+
+```js
 console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
 console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
 console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 38));
 console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+```
 
-Залиш цей код для перевірки ментором.
+Keep this code for mentor review.
 
-На що буде звертати увагу ментор при перевірці:
+### What the mentor will pay attention to:
 
-Оголошена функція filterArray(numbers, value)
-Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
-Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
-Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
-Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
-Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
-Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+- The function `filterArray(numbers, value)` is declared
+- The call `filterArray([1, 2, 3, 4, 5], 3)` returns `[4, 5]`
+- The call `filterArray([1, 2, 3, 4, 5], 4)` returns `[5]`
+- The call `filterArray([1, 2, 3, 4, 5], 5)` returns `[]`
+- The call `filterArray([12, 24, 8, 41, 76], 38)` returns `[41, 76]`
+- The call `filterArray([12, 24, 8, 41, 76], 20)` returns `[24, 41, 76]`
+- The call to `filterArray()` with a random array and number returns the correct array
+
+**Live page: [GitHub Pages](https://akinaru72.github.io/goit-js-hw-03/)**
