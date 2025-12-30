@@ -166,4 +166,6 @@ Keep this code for mentor review.
 - The call `filterArray([12, 24, 8, 41, 76], 20)` returns `[24, 41, 76]`
 - The call to `filterArray()` with a random array and number returns the correct array
 
+---
+
 **Live page: [GitHub Pages](https://akinaru72.github.io/goit-js-hw-03/)**
